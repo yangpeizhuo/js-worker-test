@@ -1,19 +1,29 @@
 {
   "name": "js-worker-test",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Lightweight JS Worker Unit Tests Environment",
   "author": "tomtomyang@tencent.com",
   "main": "./src/index.js",
+  "keywords": [
+    "typescript",
+    "javascript",
+    "worker",
+    "jest",
+    "unit",
+    "test"
+  ],
   "scripts": {
     "jest": "jest --coverage"
   },
-  "keywords": [],
   "dependencies": {
-    "blob-polyfill": "^9.0.20240710",
-    "undici": "5.23.0",
-    "urlpattern-polyfill": "^10.0.0"
+    "jest": "^29.7.0",
+    "js-worker-sandbox": "^2.1.0"
   },
-  "devDependencies": {
-    "jest": "^29.7.0"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomtomyang/js-worker-test.git"
+  },
+  "bugs": {
+    "url": "https://github.com/tomtomyang/js-worker-test/issues"
   }
 }

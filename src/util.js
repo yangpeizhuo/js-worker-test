@@ -1,4 +1,4 @@
-const { Request } = require('../runtime/standards');
+const { Request } = require('js-worker-sandbox');
 
 function isObject(value) {
   return typeof value === 'object' && value !== null && !Array.isArray(value);

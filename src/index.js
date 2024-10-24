@@ -1,20 +1,21 @@
-const WorkerRuntime = require('./runtime');
-const { isPath, isUrl, isFunction, isRequest } = require('./helper/util');
+const { WorkerSandbox } = require('js-worker-sandbox');
+const { isPath, isUrl, isFunction, isRequest } = require('./util');
 
 function setupWorkerTest(worker) {
   if (!isPath(worker)) {
     throw new Error('worker format is not valid');
   }
 
+  const ws = new WorkerSandbox();
+
   global.origin = global;
+  Object.assign(global, ws.context);
 
   const addEventListenerMock = jest.fn();
   global.addEventListener = addEventListenerMock;
 
   const consoleMock = { log: jest.fn() };
   global.console = consoleMock;
-
-  Object.assign(global, WorkerRuntime);
 
   require(worker);
 
